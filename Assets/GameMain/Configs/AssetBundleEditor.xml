@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<UnityGameFramework>
+  <AssetBundleEditor>
+    <Settings>
+      <SourceAssetRootPath>Assets/GameMain</SourceAssetRootPath>
+      <SourceAssetSearchPaths>
+        <SourceAssetSearchPath RelativePath="" />
+      </SourceAssetSearchPaths>
+      <SourceAssetUnionTypeFilter>t:Scene t:Prefab t:AudioClip t:Font t:Shader t:ShaderVariantCollection t:TextAsset t:TimelineAsset t:Material t:Texture t:Model t:AnimationClip t:AnimatorController t:VideoClip</SourceAssetUnionTypeFilter>
+      <SourceAssetUnionLabelFilter>l:AssetBundleInclusive l:LuaScript l:WwiseBank l:Icon l:SceneMap l:Avatar</SourceAssetUnionLabelFilter>
+      <SourceAssetExceptTypeFilter>t:Script</SourceAssetExceptTypeFilter>
+      <SourceAssetExceptLabelFilter>l:AssetBundleExclusive</SourceAssetExceptLabelFilter>
+      <AssetSorter>Name</AssetSorter>
+    </Settings>
+  </AssetBundleEditor>
+</UnityGameFramework>

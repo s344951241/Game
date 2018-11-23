@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<UnityGameFramework>
+  <AssetBundleCollection>
+    <AssetBundles>
+      <AssetBundle Name="Entities/Cube" LoadType="0" Packed="True" />
+      <AssetBundle Name="Movies_Data" LoadType="0" Packed="True" />
+    </AssetBundles>
+    <Assets>
+      <Asset Guid="7906dd7b4f2580f40b1d268b62e25d4e" AssetBundleName="Entities/Cube" />
+      <Asset Guid="7d121908407f7af4f9ac55305c146f75" AssetBundleName="Movies_Data" />
+      <Asset Guid="f55837aec32363743ad71c28428e4e13" AssetBundleName="Entities/Cube" />
+    </Assets>
+  </AssetBundleCollection>
+</UnityGameFramework>
