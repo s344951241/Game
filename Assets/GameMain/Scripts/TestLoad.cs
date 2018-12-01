@@ -52,6 +52,7 @@ namespace Game{
             }
             GameObject.Instantiate(curEntity.Target as GameObject, null, false);
             m_EntityPool.Unspawn(curEntity);
+            
         }
 
         private void LoadFailureCallback(string name, LoadResourceStatus status, string errorMessage, object userData)

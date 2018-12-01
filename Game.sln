@@ -3,6 +3,8 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2017
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Game", "Game.csproj", "{3400B0F8-652C-1691-E7C8-9D85B1E4B2AC}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CusEncoding", "CusEncoding.csproj", "{DA0AE6E2-E22F-5D9D-7123-9156B3143C2E}"
+EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Unity.PackageManagerUI.Editor", "Unity.PackageManagerUI.Editor.csproj", "{6877705C-FBD9-0C4F-5AFB-6FB431E5D39D}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Game.Editor", "Game.Editor.csproj", "{0C06B705-C7B3-68B5-1D35-4365D64F1D3A}"
@@ -19,6 +21,10 @@ Global
 		{3400B0F8-652C-1691-E7C8-9D85B1E4B2AC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3400B0F8-652C-1691-E7C8-9D85B1E4B2AC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3400B0F8-652C-1691-E7C8-9D85B1E4B2AC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DA0AE6E2-E22F-5D9D-7123-9156B3143C2E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DA0AE6E2-E22F-5D9D-7123-9156B3143C2E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DA0AE6E2-E22F-5D9D-7123-9156B3143C2E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DA0AE6E2-E22F-5D9D-7123-9156B3143C2E}.Release|Any CPU.Build.0 = Release|Any CPU
 		{6877705C-FBD9-0C4F-5AFB-6FB431E5D39D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{6877705C-FBD9-0C4F-5AFB-6FB431E5D39D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6877705C-FBD9-0C4F-5AFB-6FB431E5D39D}.Release|Any CPU.ActiveCfg = Release|Any CPU

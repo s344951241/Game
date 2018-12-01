@@ -1,0 +1,2 @@
+F:\workSpace\Game\obj\Debug\Assembly-CSharp-Editor.csprojResolveAssemblyReference.cache
+F:\workSpace\Game\obj\Debug\Assembly-CSharp-Editor.csproj.CoreCompileInputs.cache

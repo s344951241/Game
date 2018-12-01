@@ -1,0 +1,172 @@
+{
+  "Version": 1,
+
+  "ModelMatchRules": {
+    "iOS": [
+      {
+        "KeyWord": "iPhone10,6",
+        "Match": 0,
+        "ConfigName": "iPhone X"
+      },
+      {
+        "KeyWord": "iPhone10,3",
+        "Match": 0,
+        "ConfigName": "iPhone X"
+      }
+    ],
+
+    "Android": [
+    ]
+  },
+
+  "Configs": {
+    "iPhone X": {
+      "AspectRatio": {
+        "Width": 812,
+        "Height": 375
+      },
+      "LandscapeLeft": {
+        "Relative": {
+          "Left": 0.03612,
+          "Right": 0.96388,
+          "Bottom": 0,
+          "Top": 1
+        },
+        "Absolute": {
+          "Left": 0,
+          "Right": 0,
+          "Bottom": 0,
+          "Top": 0
+        }
+      },
+      "LandscapeRight": {
+        "Relative": {
+          "Left": 0.03612,
+          "Right": 0.96388,
+          "Bottom": 0,
+          "Top": 1
+        },
+        "Absolute": {
+          "Left": 0,
+          "Right": 0,
+          "Bottom": 0,
+          "Top": 0
+        }
+      }
+    },
+    "Vivo X21": {
+      "AspectRatio": {
+        "Width": 19,
+        "Height": 9
+      },
+      "LandscapeLeft": {
+        "Relative": {
+          "Left": 0.035,
+          "Right": 0.965,
+          "Bottom": 0,
+          "Top": 1
+        },
+        "Absolute": {
+          "Left": 0,
+          "Right": 0,
+          "Bottom": 0,
+          "Top": 0
+        }
+      }
+    },
+    "Huawei P20 (Pro)": {
+      "AspectRatio": {
+        "Width": 56,
+        "Height": 27
+      },
+      "LandscapeLeft": {
+        "Relative": {
+          "Left": 0.035,
+          "Right": 0.965,
+          "Bottom": 0,
+          "Top": 1
+        },
+        "Absolute": {
+          "Left": 0,
+          "Right": 0,
+          "Bottom": 0,
+          "Top": 0
+        }
+      }
+    },
+    "Huawei P20 Lite": {
+      "AspectRatio": {
+        "Width": 19,
+        "Height": 9
+      },
+      "LandscapeLeft": {
+        "Relative": {
+          "Left": 0.035,
+          "Right": 0.965,
+          "Bottom": 0,
+          "Top": 1
+        },
+        "Absolute": {
+          "Left": 0,
+          "Right": 0,
+          "Bottom": 0,
+          "Top": 0
+        }
+      }
+    },
+    "Huawei Honor 10": {
+      "AspectRatio": {
+        "Width": 19,
+        "Height": 9
+      },
+      "LandscapeLeft": {
+        "Relative": {
+          "Left": 0.035,
+          "Right": 0.965,
+          "Bottom": 0,
+          "Top": 1
+        },
+        "Absolute": {
+          "Left": 0,
+          "Right": 0,
+          "Bottom": 0,
+          "Top": 0
+        }
+      }
+    },
+    "Oppo R15": {
+      "AspectRatio": {
+        "Width": 19,
+        "Height": 9
+      },
+      "LandscapeLeft": {
+        "Relative": {
+          "Left": 0.035,
+          "Right": 0.965,
+          "Bottom": 0,
+          "Top": 1
+        },
+        "Absolute": {
+          "Left": 0,
+          "Right": 0,
+          "Bottom": 0,
+          "Top": 0
+        }
+      },
+      "LandscapeRight": {
+        "Relative": {
+          "Left": 0.035,
+          "Right": 0.965,
+          "Bottom": 0,
+          "Top": 1
+        },
+        "Absolute": {
+          "Left": 0,
+          "Right": 0,
+          "Bottom": 0,
+          "Top": 0
+        }
+      }
+    }
+  }
+}

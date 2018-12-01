@@ -37,14 +37,39 @@ namespace Game
 
         protected internal override void OnLeave(ProcedureOwner procedureOwner, bool isShutdown)
         {
-            GameEntry.Event.Unsubscribe(LoadConfigSuccessEventArgs.EventId, OnLoadConfigSuccess);
-            GameEntry.Event.Unsubscribe(LoadConfigFailureEventArgs.EventId, OnLoadConfigFailure);
-            GameEntry.Event.Unsubscribe(LoadDataTableSuccessEventArgs.EventId, OnLoadDataTableSuccess);
-            GameEntry.Event.Unsubscribe(LoadDataTableFailureEventArgs.EventId, OnLoadDataTableFailure);
-            GameEntry.Event.Unsubscribe(LoadDictionarySuccessEventArgs.EventId, OnLoadDictionarySuccess);
-            GameEntry.Event.Unsubscribe(LoadDictionaryFailureEventArgs.EventId, OnLoadDictionaryFailure);
+            Log.Info("Procedure preload duration: {0:F2} seconds.", procedureOwner.CurrentStateTime);
 
-            //GameEntry.Lua.StartVM();
+            if (GameEntry.Event.Check(LoadConfigSuccessEventArgs.EventId, OnLoadConfigSuccess))
+            {
+                GameEntry.Event.Unsubscribe(LoadConfigSuccessEventArgs.EventId, OnLoadConfigSuccess);
+            }
+
+            if (GameEntry.Event.Check(LoadConfigFailureEventArgs.EventId, OnLoadConfigFailure))
+            {
+                GameEntry.Event.Unsubscribe(LoadConfigFailureEventArgs.EventId, OnLoadConfigFailure);
+            }
+
+            if (GameEntry.Event.Check(LoadDataTableSuccessEventArgs.EventId, OnLoadDataTableSuccess))
+            {
+                GameEntry.Event.Unsubscribe(LoadDataTableSuccessEventArgs.EventId, OnLoadDataTableSuccess);
+            }
+
+            if (GameEntry.Event.Check(LoadDataTableFailureEventArgs.EventId, OnLoadDataTableFailure))
+            {
+                GameEntry.Event.Unsubscribe(LoadDataTableFailureEventArgs.EventId, OnLoadDataTableFailure);
+            }
+
+            if (GameEntry.Event.Check(LoadDictionarySuccessEventArgs.EventId, OnLoadDictionarySuccess))
+            {
+                GameEntry.Event.Unsubscribe(LoadDictionarySuccessEventArgs.EventId, OnLoadDictionarySuccess);
+            }
+
+            if (GameEntry.Event.Check(LoadDictionaryFailureEventArgs.EventId, OnLoadDictionaryFailure))
+            {
+                GameEntry.Event.Unsubscribe(LoadDictionaryFailureEventArgs.EventId, OnLoadDictionaryFailure);
+            }
+
+            GameEntry.Lua.StartVM();
 
             base.OnLeave(procedureOwner, isShutdown);
         }
@@ -65,11 +90,14 @@ namespace Game
             //{
             //    return;
             //}
-
-            //if (!GameEntry.Lua.IsAllLuaScriptsLoaded)
-            //{
-            //    return;
-            //}
+            if (!GameEntry.Table.IsAllTablesLoaded)
+            {
+                return;
+            }
+            if (!GameEntry.Lua.IsAllLuaScriptsLoaded)
+            {
+                return;
+            }
             ChangeState<ProcedureMain>(procedureOwner);
 #if UNITY_EDITOR
 
@@ -87,8 +115,13 @@ namespace Game
             //LoadConfig("GlobalConfig");
 
             // Preload data tables
-            // LoadDataTable("Action");
+            //LoadDataTable("DemoVO");
+            //LoadDataTable("SkillVO");
+            //LoadDataTable("UIPanelVO");
 
+            GameEntry.Table.LoadTables();
+            // Preload lua scripts
+            GameEntry.Lua.LoadScripts();
 
             // Preload dictionaries
             //LoadDictionary("Common");
@@ -96,8 +129,7 @@ namespace Game
 
             // Preload shader
             //GameEntry.Shader.StartLoadShaders();
-            // Preload lua scripts
-            //GameEntry.Lua.LoadScripts();
+
 
             //GameEntry.Indicator.PrepareAssets();
 
@@ -113,6 +145,7 @@ namespace Game
         {
             m_LoadedFlag.Add(string.Format("DataTable.{0}", dataTableName), false);
             //GameEntry.DataTable.LoadDataTable(dataTableName, this);
+
         }
 
         private void LoadDictionary(string dictionaryName)

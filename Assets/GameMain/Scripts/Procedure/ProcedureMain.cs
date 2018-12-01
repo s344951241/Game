@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using GameFramework.Fsm;
 using GameFramework.Procedure;
 using UnityEngine;
+using UnityGameFramework.Runtime;
 
 namespace Game
 {
@@ -31,6 +32,7 @@ namespace Game
             {
 
                 m_Load.CreateEntity();
+                Debug.LogError(SkillVO.GetConfig(1).Name);
             }
         }
     }

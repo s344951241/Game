@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityGameFramework.Editor.AssetBundleTools;
 
-namespace ProjectS.Editor
+namespace Game.Editor
 {
     public class BundleSwitch
     {

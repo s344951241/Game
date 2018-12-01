@@ -1,5 +1,4 @@
 ﻿using GameFramework;
-using Slib.Graph;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -8,7 +7,7 @@ using UnityEditor;
 using UnityEngine;
 using UnityGameFramework.Editor.AssetBundleTools;
 
-namespace ProjectS.Editor
+namespace Game.Editor
 {
     /// <summary>
     /// 自动加载AssetBundles
