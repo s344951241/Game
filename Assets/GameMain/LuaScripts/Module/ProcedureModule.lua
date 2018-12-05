@@ -11,7 +11,7 @@ function ProcedureModule:Init()
 end
 
 function ProcedureModule:Destroy()
-	Module:Destroy()
+	ModuleBase:Destroy()
 end
 
 return ProcedureModule

@@ -3,6 +3,7 @@ LuaMain
 Driver/CSharpCall
 Driver/LuaStart
 Driver/Main
+Hotfix/InitHotfix
 LuaObject/LuaObject
 LuaObject/LuaObjectPool
 LuaTable/TestTabl

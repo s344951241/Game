@@ -17,6 +17,7 @@ function LuaEntry:OnStart()
 	self.updateObjs = {}
 	self.updateObjs_new = {}
 	require "Utility/InitUtility"
+	require "Hotfix/InitHotfix"
 	require "LuaObject/LuaObject"
 	require "LuaObject/LuaObjectPool"
 	require "Module/ModuleBase"
