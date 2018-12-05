@@ -98,7 +98,8 @@ namespace Game
             {
                 return;
             }
-            ChangeState<ProcedureMain>(procedureOwner);
+            //ChangeState<ProcedureMain>(procedureOwner);
+            ChangeState<ProcedureConnectServer>(procedureOwner);
 #if UNITY_EDITOR
 
             //ChangeState<ProcedureConnectLoginServer>(procedureOwner);
@@ -110,7 +111,7 @@ namespace Game
 
         private void PreloadResources()
         {
-            Debug.LogError("进入预加载");
+            Log.Error("进入预加载");
             // Preload configs
             //LoadConfig("GlobalConfig");
 

@@ -20,8 +20,10 @@ function LuaEntry:OnStart()
 	require "LuaObject/LuaObject"
 	require "LuaObject/LuaObjectPool"
 	require "Module/ModuleBase"
+	require "Procedure/ProcedureBase"
 
 	self:RegisterModule("ModuleOne","Module/ModuleOne")
+	self:RegisterModule("ProcedureModule","Module/ProcedureModule")
 end 
 function LuaEntry.FindUpdateObj(obj)
 	local objs = LuaEntry.updateObjs

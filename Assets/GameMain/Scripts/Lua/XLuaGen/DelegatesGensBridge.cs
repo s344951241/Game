@@ -397,6 +397,122 @@ namespace XLua
 #endif
 		}
         
+		public void __Gen_Delegate_Imp14(XLua.LuaTable p0, object p1, object p2)
+		{
+#if THREAD_SAFE || HOTFIX_ENABLE
+            lock (luaEnv.luaEnvLock)
+            {
+#endif
+                RealStatePtr L = luaEnv.rawL;
+                int err_func =LuaAPI.load_error_func(L, errorFuncRef);
+                ObjectTranslator translator = luaEnv.translator;
+                
+                LuaAPI.lua_getref(L, luaReference);
+                
+                translator.Push(L, p0);
+                translator.PushAny(L, p1);
+                translator.PushAny(L, p2);
+                
+                int __gen_error = LuaAPI.lua_pcall(L, 3, 0, err_func);
+                if (__gen_error != 0)
+                    luaEnv.ThrowExceptionFromError(err_func - 1);
+                
+                
+                
+                LuaAPI.lua_settop(L, err_func - 1);
+                
+#if THREAD_SAFE || HOTFIX_ENABLE
+            }
+#endif
+		}
+        
+		public void __Gen_Delegate_Imp15(XLua.LuaTable p0, GameFramework.Fsm.IFsm<GameFramework.Procedure.IProcedureManager> p1)
+		{
+#if THREAD_SAFE || HOTFIX_ENABLE
+            lock (luaEnv.luaEnvLock)
+            {
+#endif
+                RealStatePtr L = luaEnv.rawL;
+                int err_func =LuaAPI.load_error_func(L, errorFuncRef);
+                ObjectTranslator translator = luaEnv.translator;
+                
+                LuaAPI.lua_getref(L, luaReference);
+                
+                translator.Push(L, p0);
+                translator.PushAny(L, p1);
+                
+                int __gen_error = LuaAPI.lua_pcall(L, 2, 0, err_func);
+                if (__gen_error != 0)
+                    luaEnv.ThrowExceptionFromError(err_func - 1);
+                
+                
+                
+                LuaAPI.lua_settop(L, err_func - 1);
+                
+#if THREAD_SAFE || HOTFIX_ENABLE
+            }
+#endif
+		}
+        
+		public void __Gen_Delegate_Imp16(XLua.LuaTable p0, GameFramework.Fsm.IFsm<GameFramework.Procedure.IProcedureManager> p1, bool p2)
+		{
+#if THREAD_SAFE || HOTFIX_ENABLE
+            lock (luaEnv.luaEnvLock)
+            {
+#endif
+                RealStatePtr L = luaEnv.rawL;
+                int err_func =LuaAPI.load_error_func(L, errorFuncRef);
+                ObjectTranslator translator = luaEnv.translator;
+                
+                LuaAPI.lua_getref(L, luaReference);
+                
+                translator.Push(L, p0);
+                translator.PushAny(L, p1);
+                LuaAPI.lua_pushboolean(L, p2);
+                
+                int __gen_error = LuaAPI.lua_pcall(L, 3, 0, err_func);
+                if (__gen_error != 0)
+                    luaEnv.ThrowExceptionFromError(err_func - 1);
+                
+                
+                
+                LuaAPI.lua_settop(L, err_func - 1);
+                
+#if THREAD_SAFE || HOTFIX_ENABLE
+            }
+#endif
+		}
+        
+		public void __Gen_Delegate_Imp17(XLua.LuaTable p0, GameFramework.Fsm.IFsm<GameFramework.Procedure.IProcedureManager> p1, float p2, float p3)
+		{
+#if THREAD_SAFE || HOTFIX_ENABLE
+            lock (luaEnv.luaEnvLock)
+            {
+#endif
+                RealStatePtr L = luaEnv.rawL;
+                int err_func =LuaAPI.load_error_func(L, errorFuncRef);
+                ObjectTranslator translator = luaEnv.translator;
+                
+                LuaAPI.lua_getref(L, luaReference);
+                
+                translator.Push(L, p0);
+                translator.PushAny(L, p1);
+                LuaAPI.lua_pushnumber(L, p2);
+                LuaAPI.lua_pushnumber(L, p3);
+                
+                int __gen_error = LuaAPI.lua_pcall(L, 4, 0, err_func);
+                if (__gen_error != 0)
+                    luaEnv.ThrowExceptionFromError(err_func - 1);
+                
+                
+                
+                LuaAPI.lua_settop(L, err_func - 1);
+                
+#if THREAD_SAFE || HOTFIX_ENABLE
+            }
+#endif
+		}
+        
         
 		static DelegateBridge()
 		{
@@ -474,6 +590,31 @@ namespace XLua
 		    if (type == typeof(UnityEngine.Video.VideoPlayer.EventHandler))
 			{
 			    return new UnityEngine.Video.VideoPlayer.EventHandler(__Gen_Delegate_Imp13);
+			}
+		
+		    if (type == typeof(Game.ProcedureLuaWorker.DelegateOnNotify))
+			{
+			    return new Game.ProcedureLuaWorker.DelegateOnNotify(__Gen_Delegate_Imp14);
+			}
+		
+		    if (type == typeof(Game.ProcedureLuaWorker.DelegateOnEnter))
+			{
+			    return new Game.ProcedureLuaWorker.DelegateOnEnter(__Gen_Delegate_Imp15);
+			}
+		
+		    if (type == typeof(Game.ProcedureLuaWorker.DelegateOnDestroy))
+			{
+			    return new Game.ProcedureLuaWorker.DelegateOnDestroy(__Gen_Delegate_Imp15);
+			}
+		
+		    if (type == typeof(Game.ProcedureLuaWorker.DelegateOnLeave))
+			{
+			    return new Game.ProcedureLuaWorker.DelegateOnLeave(__Gen_Delegate_Imp16);
+			}
+		
+		    if (type == typeof(Game.ProcedureLuaWorker.DelegateOnUpdate))
+			{
+			    return new Game.ProcedureLuaWorker.DelegateOnUpdate(__Gen_Delegate_Imp17);
 			}
 		
 		    return null;

@@ -231,6 +231,8 @@ namespace XLua.CSObjectWrap
 				
 				translator.DelayWrapLoader(typeof(CusEncoding.EncodingUtil), CusEncodingEncodingUtilWrap.__Register);
 				
+				translator.DelayWrapLoader(typeof(Game.ProcedureLuaWorker), GameProcedureLuaWorkerWrap.__Register);
+				
 				
 				
 			});

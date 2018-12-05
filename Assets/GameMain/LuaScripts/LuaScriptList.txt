@@ -8,10 +8,13 @@ LuaObject/LuaObjectPool
 LuaTable/TestTabl
 Module/ModuleBase
 Module/ModuleOne
+Module/ProcedureModule
 Module/ProfilerTest
 Net/LuaNet
 Net/protobuf
 Net/ProtoDict
+Procedure/ProcedureBase
+Procedure/ProcedureMain
 Resources/perf/memory
 Resources/perf/profiler
 Resources/tdr/tdr
@@ -19,3 +22,4 @@ Resources/xlua/util
 Utility/Alias
 Utility/Functions
 Utility/InitUtility
+Utility/TypeOf

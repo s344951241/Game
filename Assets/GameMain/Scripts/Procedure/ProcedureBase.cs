@@ -8,7 +8,7 @@ namespace Game
     public abstract class ProcedureBase : GameFramework.Procedure.ProcedureBase
     {
         protected ProcedureOwner m_ProcedureOwner = null;
-        //protected ProcedureLuaWorker m_LuaWorker = null;
+        protected ProcedureLuaWorker m_LuaWorker = null;
 
         /// <summary>
         /// 在此流程下，是否使用原生对话框。
@@ -34,46 +34,46 @@ namespace Game
             base.OnEnter(procedureOwner);
             m_ProcedureOwner = procedureOwner;
 
-            //if (m_LuaWorker == null && (!string.IsNullOrEmpty(LuaScriptName)))
-            //{
-            //    m_LuaWorker = new ProcedureLuaWorker(this, LuaScriptName);
-            //}
+            if (m_LuaWorker == null && (!string.IsNullOrEmpty(LuaScriptName)))
+            {
+                m_LuaWorker = new ProcedureLuaWorker(this, LuaScriptName);
+            }
 
-            //if (m_LuaWorker != null)
-            //{
-            //    m_LuaWorker.OnEnter(procedureOwner);
-            //}
+            if (m_LuaWorker != null)
+            {
+                m_LuaWorker.OnEnter(procedureOwner);
+            }
         }
         protected internal override void OnUpdate(ProcedureOwner procedureOwner, float elapseSeconds, float realElapseSeconds)
         {
             base.OnUpdate(procedureOwner, elapseSeconds, realElapseSeconds);
 
-            //if (m_LuaWorker != null)
-            //{
-            //    m_LuaWorker.OnUpdate(procedureOwner, elapseSeconds, realElapseSeconds);
-            //}
+            if (m_LuaWorker != null)
+            {
+                m_LuaWorker.OnUpdate(procedureOwner, elapseSeconds, realElapseSeconds);
+            }
         }
 
         protected internal override void OnLeave(ProcedureOwner procedureOwner, bool isShutdown)
         {
             base.OnLeave(procedureOwner, isShutdown);
 
-            //if (m_LuaWorker != null)
-            //{
-            //    m_LuaWorker.OnLeave(procedureOwner, isShutdown);
-            //}
+            if (m_LuaWorker != null)
+            {
+                m_LuaWorker.OnLeave(procedureOwner, isShutdown);
+            }
         }
 
         protected internal override void OnDestroy(ProcedureOwner procedureOwner)
         {
             base.OnDestroy(procedureOwner);
 
-            //if (m_LuaWorker != null)
-            //{
-            //    m_LuaWorker.OnDestroy(procedureOwner);
-            //    m_LuaWorker.Cleanup();
-            //    m_LuaWorker = null;
-            //}
+            if (m_LuaWorker != null)
+            {
+                m_LuaWorker.OnDestroy(procedureOwner);
+                m_LuaWorker.Cleanup();
+                m_LuaWorker = null;
+            }
         }
         /// <summary>
         /// 为了在 Lua 的 Procedure 逻辑中切换状态所以创建此函数。

@@ -1,0 +1,10 @@
+F:\workSpace\Game\ServerTest\ServerTest\bin\Release\ServerTest.exe.config
+F:\workSpace\Game\ServerTest\ServerTest\bin\Release\ServerTest.exe
+F:\workSpace\Game\ServerTest\ServerTest\bin\Release\ServerTest.pdb
+F:\workSpace\Game\ServerTest\ServerTest\obj\Release\ServerTest.csprojResolveAssemblyReference.cache
+F:\workSpace\Game\ServerTest\ServerTest\obj\Release\ServerTest.Form1.resources
+F:\workSpace\Game\ServerTest\ServerTest\obj\Release\ServerTest.Properties.Resources.resources
+F:\workSpace\Game\ServerTest\ServerTest\obj\Release\ServerTest.csproj.GenerateResource.cache
+F:\workSpace\Game\ServerTest\ServerTest\obj\Release\ServerTest.csproj.CoreCompileInputs.cache
+F:\workSpace\Game\ServerTest\ServerTest\obj\Release\ServerTest.exe
+F:\workSpace\Game\ServerTest\ServerTest\obj\Release\ServerTest.pdb

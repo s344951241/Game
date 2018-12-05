@@ -35,6 +35,15 @@ namespace Game
                 Debug.LogError(SkillVO.GetConfig(1).Name);
             }
         }
+
+        public override string LuaScriptName
+        {
+            get
+            {
+                return "Procedure/ProcedureMain";
+            }
+        }
+
     }
 }
 
