@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Net;
 using System.Net.Sockets;
@@ -74,7 +75,37 @@ namespace ServerTest
         }
         static void recv(object socketclientpara)
         {
+            Socket socketServer = socketclientpara as Socket;
 
+            while (isOpen)
+            {
+                //创建一个内存缓冲区，其大小为1024*1024字节  即1M     
+                byte[] arrServerRecMsg = new byte[1024 * 1024];
+                //将接收到的信息存入到内存缓冲区，并返回其字节数组的长度    
+                try
+                {
+                    int length = socketServer.Receive(arrServerRecMsg);
+
+                    // 这里只是演示用，实际中可以根据头部消息判断是什么类型的消息，然后再反序列化
+                    MemoryStream clientStream = new MemoryStream(arrServerRecMsg);
+                    MessageBox.Show(clientStream.Length+"");
+                    byte[] bytes = clientStream.ToArray();
+                    socketServer.Send(bytes);
+
+                }
+                catch (Exception ex)
+                {
+                    clientConnectionItems.Remove(socketServer.RemoteEndPoint.ToString());
+
+                    MessageBox.Show("Client Count:" + clientConnectionItems.Count);
+
+                    //提示套接字监听异常  
+                    MessageBox.Show("客户端" + socketServer.RemoteEndPoint + "已经中断连接" + "\r\n" + ex.Message + "\r\n" + ex.StackTrace + "\r\n");
+                    //关闭之前accept出来的和客户端进行通信的套接字 
+                    socketServer.Close();
+                    break;
+                }
+            }
         }
 
         //监听客户端发来的请求  

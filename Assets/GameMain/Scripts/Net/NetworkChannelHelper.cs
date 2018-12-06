@@ -128,7 +128,7 @@ namespace Game
                 Log.Warning("Packet is invalid.");
                 return false;
             }
-            destination = new MemoryStream(ProtoSerialize.SerializeProto(protoPacket.MsgObj));
+            new MemoryStream(ProtoSerialize.SerializeProto(protoPacket.MsgObj)).WriteTo(destination);
             ReferencePool.Release(packet);
             return true;
         }
@@ -141,9 +141,11 @@ namespace Game
         /// <returns>反序列化后的消息包。</returns>
         public Packet DeserializePacket(IPacketHeader packetHeader, Stream source, out object customErrorData)
         {
-            throw new System.NotImplementedException();
+            Packet packet = ReferencePool.Acquire<ProtoPacket>();
+            //packet = (Packet)RuntimeTypeModel.Default.DeserializeWithLengthPrefix(source, ReferencePool.Acquire(packetType), packetType, PrefixStyle.Fixed32, 0);
 
-            //return new Packet();
+            customErrorData = null;
+            return packet;
         }
         public void Shutdown()
         {
