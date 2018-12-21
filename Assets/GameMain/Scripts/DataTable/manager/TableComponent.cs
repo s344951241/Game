@@ -1,4 +1,5 @@
-﻿using GameFramework.Resource;
+﻿using GameFramework.Event;
+using GameFramework.Resource;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -39,6 +40,7 @@ namespace Game
         {
             _loadTableCallbacks = new LoadAssetCallbacks(LoadTableSuccessCallBack, LoadTableFailureCallBack);
             _loadTableListCallbacks = new LoadAssetCallbacks(LoadTableListSuccessCallBack, LoadTableListFailureCallBack);
+            GameEntry.Event.Subscribe(CommonEventArgs.EventId, OnCommonEvent);
         }
         public void LoadTables()
         {
@@ -104,6 +106,12 @@ namespace Game
                 return _tableData[name];
             }
             return string.Empty;
+        }
+
+        private void OnCommonEvent(object sender, GameEventArgs e)
+        {
+            CommonEventArgs args = e as CommonEventArgs;
+            Log.Info(args.Params);
         }
     }
 }

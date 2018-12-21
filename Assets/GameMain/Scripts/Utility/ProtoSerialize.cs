@@ -10,15 +10,15 @@ namespace Game
 {
     public class ProtoSerialize
     {
-
+        static int size = 0;
         public static byte[] SerializeProto(IExtensible proto)
         {
             byte[] pbdata = Serialize(proto);
             ushort len = (ushort)pbdata.Length;
-            ByteBuffer buff = ByteBuffer.Allocate(len + ProtoPacketHeader.HEADER_SIZE);
-            buff.WriteUshort((ushort)(len + ProtoPacketHeader.HEADER_SIZE));
+            ByteBuffer buff = ByteBuffer.Allocate(len + size);
+            buff.WriteUshort((ushort)(len + size));
             buff.WriteInt(0);
-            buff.WriteUint(CRC.GetCRC32(proto.GetType().FullName));
+            buff.WriteUint(CRC32.GetCRC32(proto.GetType().FullName));
             buff.WriteBytes(pbdata);
             return buff.ToArray();
         }
@@ -26,8 +26,8 @@ namespace Game
         public static byte[] SerializeProto(uint msgId, byte[] bytes)
         {
             ushort len = (ushort)bytes.Length;
-            ByteBuffer buff = ByteBuffer.Allocate(len + ProtoPacketHeader.HEADER_SIZE);
-            buff.WriteUshort((ushort)(len + ProtoPacketHeader.HEADER_SIZE));
+            ByteBuffer buff = ByteBuffer.Allocate(len + size);
+            buff.WriteUshort((ushort)(len + size));
             buff.WriteInt(0);
             buff.WriteUint(msgId);
             buff.WriteBytes(bytes);
@@ -39,8 +39,8 @@ namespace Game
             leng = buff.ReadUshort();
             check = buff.ReadInt();
             id = buff.ReadUint();
-            byteOut = new byte[leng - ProtoPacketHeader.HEADER_SIZE];
-            buff.ReadBytes(byteOut, 0, leng - ProtoPacketHeader.HEADER_SIZE);
+            byteOut = new byte[leng - size];
+            buff.ReadBytes(byteOut, 0, leng - size);
         }
         public static byte[] Serialize<T>(T msg)
         {

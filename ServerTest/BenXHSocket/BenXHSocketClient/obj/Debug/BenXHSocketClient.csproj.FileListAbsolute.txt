@@ -1,0 +1,10 @@
+F:\workSpace\BXHSocket\BenXHSocket\bin\BenXHSocketClient.exe
+F:\workSpace\BXHSocket\BenXHSocket\bin\BenXHSocketClient.pdb
+F:\workSpace\BXHSocket\BenXHSocket\BenXHSocketClient\obj\Debug\BenXHSocketClient.csprojResolveAssemblyReference.cache
+F:\workSpace\BXHSocket\BenXHSocket\BenXHSocketClient\obj\Debug\BenXHSocketClient.FrmTCPClient.resources
+F:\workSpace\BXHSocket\BenXHSocket\BenXHSocketClient\obj\Debug\BenXHSocketClient.Properties.Resources.resources
+F:\workSpace\BXHSocket\BenXHSocket\BenXHSocketClient\obj\Debug\BenXHSocketClient.csproj.GenerateResource.cache
+F:\workSpace\BXHSocket\BenXHSocket\BenXHSocketClient\obj\Debug\BenXHSocketClient.csproj.CoreCompileInputs.cache
+F:\workSpace\BXHSocket\BenXHSocket\BenXHSocketClient\obj\Debug\BenXHSocketClient.csproj.CopyComplete
+F:\workSpace\BXHSocket\BenXHSocket\BenXHSocketClient\obj\Debug\BenXHSocketClient.exe
+F:\workSpace\BXHSocket\BenXHSocket\BenXHSocketClient\obj\Debug\BenXHSocketClient.pdb

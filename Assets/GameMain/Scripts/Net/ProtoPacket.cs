@@ -25,18 +25,16 @@ namespace Game
                 return _msgId;
             }
         }
-        public int SetId
+
+        public void SetId(int id)
         {
-            set {
-                _msgId = value;
-            }
+            _msgId = id;
+            UnityEngine.Debug.Log("设置id" + Id);
         }
 
-        public IExtensible SetObj
+        public void SetObj(IExtensible proto)
         {
-            set {
-                _msg = value;
-            }
+            _msg = proto;
         }
         public IExtensible MsgObj
         {

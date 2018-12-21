@@ -57,7 +57,7 @@ function LuaObject:UnregisterLateUpdate()
 	end
 end
 
-function LuaObject:subscribeEvents(id,handler)
+function LuaObject:SubscribeEvent(id,handler)
 	if self.subscribeEvents[id] then
 		Log.Warning("Event {0}({1}) already subscribed.", GameEntry.Event:GetEventType(id).FullName, id)
 		return

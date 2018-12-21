@@ -6,24 +6,37 @@ using UnityEngine;
 
 namespace Game
 {
-    public class ProtoPacketHeader : IPacketHeader, IReference
+    public abstract class ProtoPacketHeader : IPacketHeader, IReference
     {
-        public const int FS_LENGTH = 2;
-        public const int FS_CHECK = 4;
-        public const int FS_MSGID = 4;
-        public const int HEADER_SIZE = FS_LENGTH + FS_CHECK + FS_MSGID;
+        public abstract PacketType PacketType
+        {
+            get;
+        }
 
-        public PacketType PacketType
+        public int PacketId
         {
             get;
             set;
         }
-        public int PacketLength{get;set; }
-        public int Check { get; set; }
-        public int ProtoId { set; get; }
+
+        public int PacketLength
+        {
+            get;
+            set;
+        }
+
+        public bool IsValid
+        {
+            get
+            {
+                return PacketType != PacketType.Undefined && PacketId > 0 /*&& PacketId <= ushort.MaxValue*/ && PacketLength >= 0;
+            }
+        }
+
         public void Clear()
         {
-            
+            PacketId = 0;
+            PacketLength = 0;
         }
     }
 }

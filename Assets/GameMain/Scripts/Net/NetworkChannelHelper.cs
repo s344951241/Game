@@ -2,6 +2,7 @@
 using GameFramework.Event;
 using GameFramework.Network;
 using ProtoBuf;
+using ProtoBuf.Meta;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -21,7 +22,7 @@ namespace Game
         {
             get
             {
-                return ProtoPacketHeader.HEADER_SIZE;
+                return ProtoHeader.Length;
             }
         }
       
@@ -33,17 +34,16 @@ namespace Game
         /// <returns></returns>
         public IPacketHeader DeserializePacketHeader(Stream source, out object customErrorData)
         {
+            Debug.LogError("反序列化包头");
             // 注意：此函数并不在主线程调用！
             customErrorData = null;
-            ProtoPacketHeader packetHeader = ReferencePool.Acquire<ProtoPacketHeader>();
-            //bool retVal = packetHeader.Deserialize(source);
-            //if (retVal)
-            //{
-            //    return packetHeader;
-            //}
-
-            //return null;
-            return packetHeader;
+            ProtoHeader packetHeader = ReferencePool.Acquire<ProtoHeader>();
+            bool retVal = packetHeader.Deserialize(source);
+            if (retVal)
+            {
+                return packetHeader;
+            }
+            return null;
         }
 
         public void Initialize(INetworkChannel networkChannel)
@@ -53,7 +53,7 @@ namespace Game
             //m_NetworkChannel.SetDefaultHandler(LuaPacketHandler);
 
             // 反射注册包和包处理函数。
-            Type packetBaseType = typeof(ProtoPacket);
+            //Type packetBaseType = typeof(ProtoPacket);
             Type packetHandlerBaseType = typeof(ProtoHandler);
             Assembly assembly = Assembly.GetExecutingAssembly();
             Type[] types = assembly.GetTypes();
@@ -79,7 +79,8 @@ namespace Game
 
                 if (!types[i].IsAbstract && !types[i].IsInterface && types[i].GetCustomAttributes(typeof(ProtoContractAttribute), false).Length > 0)
                 {
-                    _protoTypeDic.Add((int)CRC.GetCRC32(types[i].FullName), types[i]);
+                    Debug.LogError("id" + CRC16.GetCRC16(types[i].FullName));
+                    _protoTypeDic.Add(CRC16.GetCRC16(types[i].FullName), types[i]);
                 }
                 else if (types[i].BaseType == packetHandlerBaseType)
                 {
@@ -108,7 +109,8 @@ namespace Game
                 heart.time = 10;
 
                 ProtoPacket packet = ReferencePool.Acquire<ProtoPacket>();
-                packet.SetObj=heart;
+                packet.SetObj(heart);
+                packet.SetId(CRC16.GetCRC16(typeof(ProtoBuf.Heart).FullName));
                 m_NetworkChannel.Send(packet);
             }
             return true;
@@ -128,9 +130,29 @@ namespace Game
                 Log.Warning("Packet is invalid.");
                 return false;
             }
-            new MemoryStream(ProtoSerialize.SerializeProto(protoPacket.MsgObj)).WriteTo(destination);
-            ReferencePool.Release(packet);
-            return true;
+
+            using (MemoryStream memorySystem = new MemoryStream())
+            {
+                
+                ProtoHeader protoHeader = ReferencePool.Acquire<ProtoHeader>();
+                memorySystem.Position = protoHeader.HeadLength;
+                Serializer.Serialize<IExtensible>(memorySystem, protoPacket.MsgObj);
+                //Serializer.SerializeWithLengthPrefix(memorySystem, protoPacket.MsgObj, PrefixStyle.Base128,1);
+                protoHeader.PacketId = packet.Id;
+                protoHeader.PacketLength = (int)memorySystem.Length - protoHeader.HeadLength;
+
+                memorySystem.Position = 0;
+                bool retVal = protoHeader.Serialize(memorySystem);
+                ReferencePool.Release(protoHeader);
+                if (!retVal)
+                {
+                    Log.Warning("Serialize packet header failure.");
+                    return false;
+                }
+                //StreamUtility.Process(memorySystem.GetBuffer(), 0, (int)memorySystem.Length);
+                memorySystem.WriteTo(destination);
+                return true;
+            }
         }
         /// <summary>
         /// 反序列化消息包。
@@ -141,10 +163,27 @@ namespace Game
         /// <returns>反序列化后的消息包。</returns>
         public Packet DeserializePacket(IPacketHeader packetHeader, Stream source, out object customErrorData)
         {
-            Packet packet = ReferencePool.Acquire<ProtoPacket>();
-            //packet = (Packet)RuntimeTypeModel.Default.DeserializeWithLengthPrefix(source, ReferencePool.Acquire(packetType), packetType, PrefixStyle.Fixed32, 0);
+            Debug.LogError("反序列化");
 
             customErrorData = null;
+            ProtoHeader protoHeader = packetHeader as ProtoHeader;
+            if(protoHeader == null)
+            {
+                Log.Warning("Packet header is invalid.");
+                return null;
+            }
+            ProtoPacket packet = ReferencePool.Acquire<ProtoPacket>();
+            if (protoHeader.IsValid)
+            {
+                //byte[] buffer = new byte[protoHeader.PacketLength];
+                Type protoType = _protoTypeDic[protoHeader.PacketId];
+                packet.SetId(protoHeader.PacketId);
+                // packet.SetObj((IExtensible)(RuntimeTypeModel.Default.DeserializeWithLengthPrefix(source,null, protoType, PrefixStyle.Base128, 1)));
+                //packet.SetObj(Serializer.Deserialize<Heart>(source));
+                packet.SetObj((IExtensible)RuntimeTypeModel.Default.Deserialize(source,null,protoType));
+            }
+
+            ReferencePool.Release(protoHeader);
             return packet;
         }
         public void Shutdown()
@@ -213,7 +252,7 @@ namespace Game
                 return;
             }
 
-            //UpwardPacketHeader.ResetSerialId();
+            UpProtoHeader.ResetSerialId();
             Log.Info("Network channel '{0}' connected, local address '{1}:{2}', remote address '{3}:{4}'.", ne.NetworkChannel.Name, ne.NetworkChannel.LocalIPAddress, ne.NetworkChannel.LocalPort.ToString(), ne.NetworkChannel.RemoteIPAddress, ne.NetworkChannel.RemotePort.ToString());
         }
         private void OnNetworkClosed(object sender, GameEventArgs e)
@@ -224,7 +263,7 @@ namespace Game
                 return;
             }
 
-            //UpwardPacketHeader.ResetSerialId();
+            UpProtoHeader.ResetSerialId();
             Log.Info(Utility.Text.Format("Network channel '{0}' closed.", ne.NetworkChannel.Name));
         }
 

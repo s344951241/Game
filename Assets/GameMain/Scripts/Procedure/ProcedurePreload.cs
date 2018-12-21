@@ -98,8 +98,8 @@ namespace Game
             {
                 return;
             }
-            //ChangeState<ProcedureMain>(procedureOwner);
-            ChangeState<ProcedureConnectServer>(procedureOwner);
+            ChangeState<ProcedureMain>(procedureOwner);
+            //ChangeState<ProcedureConnectServer>(procedureOwner);
 #if UNITY_EDITOR
 
             //ChangeState<ProcedureConnectLoginServer>(procedureOwner);

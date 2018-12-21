@@ -799,8 +799,11 @@
     <Compile Include="Assets\GameMain\Scripts\DataTable\SkillVO.cs" />
     <Compile Include="Assets\GameMain\Scripts\DataTable\UIPanelVO.cs" />
     <Compile Include="Assets\GameMain\Scripts\Entity\EntityBase.cs" />
+    <Compile Include="Assets\GameMain\Scripts\Event\CommonEventArgs.cs" />
+    <Compile Include="Assets\GameMain\Scripts\Event\LuaEventArgs.cs" />
     <Compile Include="Assets\GameMain\Scripts\Extension\ConfigExtension.cs" />
     <Compile Include="Assets\GameMain\Scripts\Extension\LocalizationExtension.cs" />
+    <Compile Include="Assets\GameMain\Scripts\LengthTest.cs" />
     <Compile Include="Assets\GameMain\Scripts\Lua\LuaComponent.cs" />
     <Compile Include="Assets\GameMain\Scripts\Lua\ProcedureLuaWorker.cs" />
     <Compile Include="Assets\GameMain\Scripts\Lua\XLuaGen\CusEncodingEncodingUtilWrap.cs" />
@@ -915,6 +918,10 @@
     <Compile Include="Assets\GameMain\Scripts\Lua\XLuaGen\XLuaGenAutoRegister.cs" />
     <Compile Include="Assets\GameMain\Scripts\Movie\MovieComponent.cs" />
     <Compile Include="Assets\GameMain\Scripts\Movie\MovieEventArgs.cs" />
+    <Compile Include="Assets\GameMain\Scripts\Net\Handler\HeartHandler.cs" />
+    <Compile Include="Assets\GameMain\Scripts\Net\Header\DownProtoHeader.cs" />
+    <Compile Include="Assets\GameMain\Scripts\Net\Header\ProtoHeader.cs" />
+    <Compile Include="Assets\GameMain\Scripts\Net\Header\UpProtoHeader.cs" />
     <Compile Include="Assets\GameMain\Scripts\Net\NetworkChannelHelper.cs" />
     <Compile Include="Assets\GameMain\Scripts\Net\PacketType.cs" />
     <Compile Include="Assets\GameMain\Scripts\Net\Proto\Person.cs" />
@@ -954,8 +961,10 @@
     <Compile Include="Assets\GameMain\Scripts\UI\ScreenSafeArea\ScreenSafeAreaUGUIController.cs" />
     <Compile Include="Assets\GameMain\Scripts\Utility\AssetUtility.cs" />
     <Compile Include="Assets\GameMain\Scripts\Utility\ByteBuffer.cs" />
-    <Compile Include="Assets\GameMain\Scripts\Utility\CRC.cs" />
+    <Compile Include="Assets\GameMain\Scripts\Utility\CRC16.cs" />
+    <Compile Include="Assets\GameMain\Scripts\Utility\CRC32.cs" />
     <Compile Include="Assets\GameMain\Scripts\Utility\ProtoSerialize.cs" />
+    <Compile Include="Assets\GameMain\Scripts\Utility\StreamUtility.cs" />
     <Compile Include="Assets\GameMain\Scripts\Utility\WebUtility.cs" />
     <Compile Include="Assets\XLua\Src\CodeEmit.cs" />
     <Compile Include="Assets\XLua\Src\CopyByValue.cs" />

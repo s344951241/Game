@@ -94,3 +94,13 @@ function class(className,...)
 
     return cls
 end
+
+function handler(obj,method)
+    if obj==nil or method==nil then
+        Log.Error("Can't handler nil obj or function.")
+        return nil
+    end
+    return function(...)
+        return method(obj,...)
+    end
+end

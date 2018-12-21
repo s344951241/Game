@@ -8,14 +8,18 @@
         Undefined = 0,
 
         /// <summary>
-        /// 客户端发往服务器的包。
+        /// 基于 ProtoBuf 的上行消息包。
         /// </summary>
-        ClientToServer,
+        UpwardPacket,
 
         /// <summary>
-        /// 服务器发往客户端的包。
+        /// 基于 ProtoBuf 的下行消息包。
         /// </summary>
-        ServerToClient,
+        DownwardPacket,
+        /// <summary>
+        /// 不区分两端的proto
+        /// </summary>
+        Proto,
     }
 
 }

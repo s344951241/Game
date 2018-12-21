@@ -26,7 +26,7 @@ namespace Game
             UnityEditor.EditorApplication.isPlaying = false;
             UnityEditor.EditorUtility.DisplayDialog("提示信息", "请使用 Unity 2018.1.2f1 版本运行工程。", "知道了");
 #endif
-
+            GameEntry.Event.Fire(this, ReferencePool.Acquire<CommonEventArgs>().Fill("Enter ProcedureLaunch..."));
             // 构建信息：发布版本时，把一些数据以 Json 的格式写入 Assets/GameMain/Configs/BuildInfo.txt，供游戏逻辑读取。
             GameEntry.BuiltinData.InitBuildInfo();
 

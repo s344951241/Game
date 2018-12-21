@@ -1,0 +1,5 @@
+F:\workSpace\BXHSocket\BenXHSocket\bin\BenXHSocket.dll
+F:\workSpace\BXHSocket\BenXHSocket\bin\BenXHSocket.pdb
+F:\workSpace\BXHSocket\BenXHSocket\BenXHSocket\obj\Debug\BenXHSocket.csproj.CoreCompileInputs.cache
+F:\workSpace\BXHSocket\BenXHSocket\BenXHSocket\obj\Debug\BenXHSocket.dll
+F:\workSpace\BXHSocket\BenXHSocket\BenXHSocket\obj\Debug\BenXHSocket.pdb

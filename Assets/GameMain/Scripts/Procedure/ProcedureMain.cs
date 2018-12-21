@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using GameFramework;
 using GameFramework.Fsm;
 using GameFramework.Procedure;
 using UnityEngine;
@@ -33,6 +34,10 @@ namespace Game
 
                 m_Load.CreateEntity();
                 Debug.LogError(SkillVO.GetConfig(1).Name);
+                LuaEventArgs arg = ReferencePool.Acquire<LuaEventArgs>().Fill("Main");
+                arg.IntArgs[0] = 1;
+                arg.IntArgs[1] = 2;
+                GameEntry.Event.Fire(this, arg);
             }
         }
 

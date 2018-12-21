@@ -23,7 +23,7 @@ namespace Game
             //Demo8_SocketServer.Start();
             m_NetworkChannelHelper = new NetworkChannelHelper();
             m_Channel = GameEntry.Network.CreateNetworkChannel("testName", m_NetworkChannelHelper);
-            m_Channel.Connect(IPAddress.Parse("127.0.0.1"), 8098);
+            m_Channel.Connect(IPAddress.Parse("127.0.0.1"), 4455);
         }
 
     }
