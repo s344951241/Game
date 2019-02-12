@@ -1,3 +1,6 @@
 ﻿Demo
+Music
+Scene
 Skill
+Sound
 UIPanel

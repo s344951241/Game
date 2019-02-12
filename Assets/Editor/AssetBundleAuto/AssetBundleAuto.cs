@@ -470,7 +470,14 @@ namespace Game.Editor
                     {
                         continue;
                     }
-                    m_Controller.AssignAsset(AssetDatabase.AssetPathToGUID(path), assetBundle.Name, assetBundle.Variant);
+                    bool flag = m_Controller.AssignAsset(AssetDatabase.AssetPathToGUID(path), assetBundle.Name, assetBundle.Variant);
+                    //if (flag == false)
+                    //{
+                    //    bundleName += "_Res";
+                    //    AddAssetBundle(bundleName, null, false);
+                    //    assetBundle = m_Controller.GetAssetBundle(bundleName, null);
+                    //    m_Controller.AssignAsset(AssetDatabase.AssetPathToGUID(path), assetBundle.Name, assetBundle.Variant);
+                    //}
                 }
                 EditorUtility.ClearProgressBar();
             }

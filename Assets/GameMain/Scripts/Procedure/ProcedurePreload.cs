@@ -1,5 +1,6 @@
 ﻿using GameFramework;
 using GameFramework.Event;
+using GameFramework.Resource;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityGameFramework.Runtime;
@@ -98,7 +99,9 @@ namespace Game
             {
                 return;
             }
-            ChangeState<ProcedureMain>(procedureOwner);
+            //ChangeState<ProcedureMain>(procedureOwner);
+            procedureOwner.SetData<VarInt>(Constant.ProcedureData.NextSceneId, GameEntry.Config.GetInt("Scene.Menu"));
+            ChangeState<ProcedureChangeScene>(procedureOwner);
             //ChangeState<ProcedureConnectServer>(procedureOwner);
 #if UNITY_EDITOR
 
@@ -114,13 +117,15 @@ namespace Game
             Log.Error("进入预加载");
             // Preload configs
             //LoadConfig("GlobalConfig");
-
+            LoadConfig("DefaultConfig");
             // Preload data tables
             //LoadDataTable("DemoVO");
             //LoadDataTable("SkillVO");
             //LoadDataTable("UIPanelVO");
 
             GameEntry.Table.LoadTables();
+            LoadDictionary("Default");
+            LoadFont("MainFont");
             // Preload lua scripts
             GameEntry.Lua.LoadScripts();
 
@@ -138,7 +143,7 @@ namespace Game
 
         private void LoadConfig(string configName)
         {
-            m_LoadedFlag.Add(string.Format("Config.{0}", configName), false);
+            m_LoadedFlag.Add(Utility.Text.Format("Config.{0}", configName), false);
             GameEntry.Config.LoadConfig(configName, this);
         }
 
@@ -154,6 +159,24 @@ namespace Game
             m_LoadedFlag.Add(string.Format("Dictionary.{0}", dictionaryName), false);
             GameEntry.Localization.LoadDictionary(dictionaryName, this);
         }
+
+        private void LoadFont(string fontName)
+        {
+            m_LoadedFlag.Add(Utility.Text.Format("Font.{0}", fontName), false);
+            GameEntry.Resource.LoadAsset(AssetUtility.GetFontAsset(fontName,true), Constant.AssetPriority.FontAsset, new LoadAssetCallbacks(
+                (assetName, asset, duration, userData) =>
+                {
+                    m_LoadedFlag[Utility.Text.Format("Font.{0}", fontName)] = true;
+                    UGUIForm.SetMainFont((Font)asset);
+                    Log.Info("Load font '{0}' OK.", fontName);
+                },
+
+                (assetName, status, errorMessage, userData) =>
+                {
+                    Log.Error("Can not load font '{0}' from '{1}' with error message '{2}'.", fontName, assetName, errorMessage);
+                }));
+        }
+
 
         private void OnLoadConfigSuccess(object sender, GameEventArgs e)
         {

@@ -1,0 +1,5 @@
+﻿id,资源名,背景音乐id
+Id,AssetName,BackgroundMusicId
+int,string,int
+1,Menu,1
+2,Main,2

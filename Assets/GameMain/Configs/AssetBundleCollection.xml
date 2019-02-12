@@ -2,13 +2,53 @@
 <UnityGameFramework>
   <AssetBundleCollection>
     <AssetBundles>
+      <AssetBundle Name="Configs" LoadType="3" Packed="True" />
+      <AssetBundle Name="DataTables" LoadType="3" Packed="True" />
       <AssetBundle Name="Entities/Cube" LoadType="0" Packed="True" />
+      <AssetBundle Name="Entities/Cube_Data" LoadType="0" Packed="True" />
+      <AssetBundle Name="LuaScripts" LoadType="3" Packed="True" />
       <AssetBundle Name="Movies_Data" LoadType="0" Packed="True" />
+      <AssetBundle Name="Scenes/demo_Scene" LoadType="0" Packed="True" />
     </AssetBundles>
     <Assets>
+      <Asset Guid="043e6222f63c5244caedfdb08d8ed429" AssetBundleName="LuaScripts" />
+      <Asset Guid="0495416228cfca24180c3d9b049030a3" AssetBundleName="LuaScripts" />
+      <Asset Guid="06c88129bd6abc44b82538dc28092aab" AssetBundleName="LuaScripts" />
+      <Asset Guid="0a781f9d04eaeaa48ace80f8db48907b" AssetBundleName="LuaScripts" />
+      <Asset Guid="0cf062453bcb2a44db128334f66f3d19" AssetBundleName="DataTables" />
+      <Asset Guid="2eee68ff6d075a141bed684da68b91ac" AssetBundleName="LuaScripts" />
+      <Asset Guid="3f0409d5e4e52d04faf418054a529d70" AssetBundleName="LuaScripts" />
+      <Asset Guid="4118771243830524e93d46d33664c1d4" AssetBundleName="LuaScripts" />
+      <Asset Guid="4cc7bee2617d05a49a38c009589765c8" AssetBundleName="LuaScripts" />
+      <Asset Guid="613b37fbcd62c1d49b6396c0707abf60" AssetBundleName="LuaScripts" />
+      <Asset Guid="6ff3e5eec59551f4e91a43c1af1a8070" AssetBundleName="LuaScripts" />
+      <Asset Guid="768d78c95103746489d1285925a6f838" AssetBundleName="LuaScripts" />
+      <Asset Guid="78adcd47ca992614a949854ae5015e49" AssetBundleName="DataTables" />
       <Asset Guid="7906dd7b4f2580f40b1d268b62e25d4e" AssetBundleName="Entities/Cube" />
+      <Asset Guid="7bd0fcabd843e0d44a8f17ba6d4933f5" AssetBundleName="Scenes/demo_Scene" />
+      <Asset Guid="7bdb551442eb8bc4da064ea468b69973" AssetBundleName="DataTables" />
       <Asset Guid="7d121908407f7af4f9ac55305c146f75" AssetBundleName="Movies_Data" />
+      <Asset Guid="7ff20b32d36eeae469c91970cf4cecd2" AssetBundleName="LuaScripts" />
+      <Asset Guid="88233b998f2df384bb54d33fd468b77d" AssetBundleName="LuaScripts" />
+      <Asset Guid="88323d2e3815daa4da98fd6470bd2c80" AssetBundleName="LuaScripts" />
+      <Asset Guid="8aaa3821eaf8c7a4590966971e98cf0b" AssetBundleName="LuaScripts" />
+      <Asset Guid="8ae8482ce74bf664ba499a40a76f3857" AssetBundleName="LuaScripts" />
+      <Asset Guid="8ff851cb909a214438983101f837ad31" AssetBundleName="LuaScripts" />
+      <Asset Guid="974992f2eb8a322468486f59a3bb6a34" AssetBundleName="LuaScripts" />
+      <Asset Guid="9b2730acdf04d67419889d5e5f84f744" AssetBundleName="LuaScripts" />
+      <Asset Guid="9fe0059c60a80864791c29dbb4c5601d" AssetBundleName="LuaScripts" />
+      <Asset Guid="a3bb9c8cae77a374bb74c4f543d8480f" AssetBundleName="LuaScripts" />
+      <Asset Guid="a644d9d3d7201de4aaff34b1e5a5aeca" AssetBundleName="Configs" />
+      <Asset Guid="b06172e86038a6c43a7c3310246b5a93" AssetBundleName="LuaScripts" />
+      <Asset Guid="b433f59283245d24982524228c0e311b" AssetBundleName="LuaScripts" />
+      <Asset Guid="d52c72a269b3c724b9031eb63d9d1172" AssetBundleName="LuaScripts" />
+      <Asset Guid="d5bda79435531414eba178ca064ebb6d" AssetBundleName="Configs" />
+      <Asset Guid="e866e29736567f84ea2846491cfb7455" AssetBundleName="LuaScripts" />
+      <Asset Guid="ebe768be19954c4438c4bda0d07fefa8" AssetBundleName="Entities/Cube_Data" />
+      <Asset Guid="ec115d2bdf5f62b48a330c15b575ab89" AssetBundleName="DataTables" />
+      <Asset Guid="eebb1e5ed24e5414c96aace473ee5823" AssetBundleName="LuaScripts" />
       <Asset Guid="f55837aec32363743ad71c28428e4e13" AssetBundleName="Entities/Cube" />
+      <Asset Guid="ff939c3187534e547be49de207b9846b" AssetBundleName="LuaScripts" />
     </Assets>
   </AssetBundleCollection>
 </UnityGameFramework>

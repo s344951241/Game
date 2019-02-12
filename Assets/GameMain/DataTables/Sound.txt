@@ -1,0 +1,8 @@
+﻿id,名字,优先级,是否循环,音量,声音空间混合量（0为2D，1为3D，中间值混合效果）,声音最大距离,
+Id,Name,Priority,Loop,Volume,SpatialBlend,MaxDistance,
+int,string,float,bool,float,float,float,
+10000,weapon_player,0,False,1,0,100,
+10001,weapon_enemy,0,False,1,0,100,
+20000,explosion_player,0,False,1,0,100,
+20001,explosion_enemy,0,False,1,0,100,
+20002,explosion_asteroid,0,False,1,0,100,

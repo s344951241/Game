@@ -17,7 +17,7 @@ namespace Game
 
         public static string GetDictionaryAsset(string assetName)
         {
-            return string.Format("Assets/GameMain/Localization/{0}/Dictionaries/{1}.txt", GameEntry.Localization.Language.ToString(), assetName);
+            return string.Format("Assets/GameMain/Localization/{0}/Dictionaries/{1}.xml", GameEntry.Localization.Language.ToString(), assetName);
         }
 
         public static string GetLuaScriptAsset(string assetName)
@@ -88,11 +88,11 @@ namespace Game
         {
             if (isLocalization)
             {
-                return string.Format("Assets/GameMain/Localization/{0}/Music/{1}.wav", GameEntry.Localization.Language.ToString(), assetName);
+                return string.Format("Assets/GameMain/Localization/{0}/Music/{1}.mp3", GameEntry.Localization.Language.ToString(), assetName);
             }
             else
             {
-                return string.Format("Assets/GameMain/Music/{0}.wav", assetName);
+                return string.Format("Assets/GameMain/Music/{0}.mp3", assetName);
             }
         }
 
