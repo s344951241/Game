@@ -26,7 +26,6 @@ public class SoundVO {
       float.TryParse(tokens[4], out data.Volume);
       float.TryParse(tokens[5], out data.SpatialBlend);
       float.TryParse(tokens[6], out data.MaxDistance);
-
       _Data[data.Id] = data;
   }
   public static SoundVO GetConfig(int id)

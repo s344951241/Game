@@ -2749,13 +2749,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 113640}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a5079836f95c2a44b96fa331487ebb70, type: 3}
+  m_Script: {fileID: 11500000, guid: 63f87f382a5856e4ca37b82ca3c30f0c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_OnHover:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 11472764}
+      - m_Target: {fileID: 114257221791787828}
         m_MethodName: PlayUISound
         m_Mode: 3
         m_Arguments:
@@ -2766,12 +2766,12 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine, Version=0.0.0.0, Culture=neutral,
-      PublicKeyToken=null
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 11472764}
+      - m_Target: {fileID: 114257221791787828}
         m_MethodName: PlayUISound
         m_Mode: 3
         m_Arguments:
@@ -2782,7 +2782,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 11472764}
+      - m_Target: {fileID: 114257221791787828}
         m_MethodName: Close
         m_Mode: 1
         m_Arguments:
@@ -2793,8 +2793,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine, Version=0.0.0.0, Culture=neutral,
-      PublicKeyToken=null
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
 --- !u!114 &11469854
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2987,13 +2987,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 123622}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a5079836f95c2a44b96fa331487ebb70, type: 3}
+  m_Script: {fileID: 11500000, guid: 63f87f382a5856e4ca37b82ca3c30f0c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_OnHover:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 11472764}
+      - m_Target: {fileID: 114257221791787828}
         m_MethodName: PlayUISound
         m_Mode: 3
         m_Arguments:
@@ -3004,12 +3004,12 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine, Version=0.0.0.0, Culture=neutral,
-      PublicKeyToken=null
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 11472764}
+      - m_Target: {fileID: 114257221791787828}
         m_MethodName: PlayUISound
         m_Mode: 3
         m_Arguments:
@@ -3020,7 +3020,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 11472764}
+      - m_Target: {fileID: 114257221791787828}
         m_MethodName: OnSubmitButtonClick
         m_Mode: 1
         m_Arguments:
@@ -3031,8 +3031,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine, Version=0.0.0.0, Culture=neutral,
-      PublicKeyToken=null
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
 --- !u!114 &11483886
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4471,7 +4471,7 @@ RectTransform:
   m_GameObject: {fileID: 114776}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.8, y: 0.8, z: 1}
   m_Children:
   - {fileID: 22428682}
   - {fileID: 22405276}
@@ -4487,8 +4487,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: -120, y: 840}
+  m_AnchoredPosition: {x: 0, y: 12.4}
+  m_SizeDelta: {x: -120, y: 899.5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &22455732
 RectTransform:
